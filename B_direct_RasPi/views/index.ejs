@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This sets the page title that will be visible in the browser tab, it uses an attribute passed by the render function invoked in the .index() function defined in /routes/index.js -->
+    <title><%= title %></title>
+
+    <!-- This includes the style.css stylesheet -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- This includes the socket.io javascript library -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- This includes the latest version of jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h2>Site to Site Raspberry Pi Serial Tutorial 1</h2>
+        <ul id="titles">
+          <!-- Javascript will be used to print the header titles here -->
+        </ul>
+      </div><!-- /#header -->
+      <div id="main">
+        <ul id="samples">
+          <!-- Javascript will be used to deposit samples here -->
+        </ul><!-- /#time-list -->
+
+      </div><!-- /#main -->
+    </div><!-- /#wrapper -->
+ 
+  <script type="text/javascript"> 
+    /**
+    *
+    * Here you use the io connect() function to connect to a given server emitting
+    * events through a web socket.
+    *
+    **/
+    var socket = io.connect('http://169.254.0.2:3000');
+
+    /**
+    *
+    * First we bind the 'connected' event, which is a test handshake from the 
+    * server that you can use to see if the connection was successfully made.
+    * Open the console in the developer tools in the browser to see if the
+    * test message was received.
+    *
+    **/
+    socket.on('connected', function(data) {    
+      console.log( data );
+    }); 
+
+    /**
+    *
+    * Here we bind an anonymous function to handle the 'sendData' event. This event
+    * will be used to send the analog sensor sample data from the server and add
+    * a new colored bar to the browser screen.
+    *
+    **/
+    socket.on('sendData', function (dataString) {
+      /**
+      *
+      * First we print out the dataString, the value sent over the web socket from
+      * the server that corresponds to the analog sensor value, to the browser console
+      * to check that the value arrived and is correct.
+      *
+      **/
+      console.log( dataString );
+
+      
+      $('#samples').prepend('<img src="'+ dataString + '">');
+
+    });  
+  </script>
+  </body>
+</html>
