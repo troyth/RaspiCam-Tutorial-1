@@ -68,9 +68,7 @@
       console.log( dataString );
 
       
-      $('#samples').prepend('<img src="/images/'+ dataString + '">');
-
-      socket.emit('confirm', 'got it');
+      $('#samples').prepend('<li><img src="/images/'+ dataString + '"></li>');
 
     });  
   </script>

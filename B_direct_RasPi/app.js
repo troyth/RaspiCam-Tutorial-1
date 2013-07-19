@@ -194,10 +194,6 @@ io.sockets.on('connection', function(socket){
   console.log("Socket connected"); 
   socket.emit('connected', 'You have successfully connected to server thorugh a web socket'); 
 
-  socket.on('confirm', function(val){
-    console.log('\n \n got??? '+ val + '\n \n');
-  });
-
   /**
   *
   * Here we set up the listener for the io "sendIt" event that the photoresistor triggers each time
