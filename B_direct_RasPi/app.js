@@ -103,7 +103,7 @@ var io = require('socket.io').listen(server);
 * photoresistor as we are using here. See https://github.com/rwldrn/johnny-five/blob/master/docs/photoresistor.md
 *
 **/
-var five = require("johnny-five-with-raspicam"),
+var five = require("johnny-five-plus-raspicam"),
     camera, filename, filepath;
 
 /**
@@ -129,7 +129,7 @@ var five = require("johnny-five-with-raspicam"),
   **/
   
   camera = new five.RaspiCam({
-    freq: 0,//update the value every this many milliseconds and trigger a "read" event
+    freq: 10000,//update the value every this many milliseconds and trigger a "read" event
     filepath: filepath,
     mode: 'still'
   });
