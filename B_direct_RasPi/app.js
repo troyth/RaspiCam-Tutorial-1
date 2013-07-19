@@ -134,6 +134,8 @@ var five = require("johnny-five-plus-raspicam"),
     mode: 'still'
   });
 
+  camera.start();
+
   /**
   *
   * Here you will bind an anonymous function to the photoresistor read event that is triggered
