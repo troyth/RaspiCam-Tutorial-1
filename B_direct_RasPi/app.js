@@ -151,7 +151,10 @@ var five = require("johnny-five-plus-raspicam"),
     console.log('path to picture: '+ imagepath);
 
     if(filepath == imagepath){
-      io.emit('sendIt', filename );
+      setTimeout(function(){
+        io.emit('sendIt', filename );
+      }, 10000);
+      
     }
 
     /**
