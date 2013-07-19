@@ -150,10 +150,7 @@ var five = require("johnny-five-plus-raspicam"),
     console.log( "---error from camera: " + err );
     console.log('path to picture: '+ imagepath);
 
-    if(filepath == imagepath){
-      io.emit('sendIt', filename );
-    }
-
+    io.emit('sendIt', imagepath );
     /**
     *
     * This is the key bit of the code that connects the "read" event listener of the photoresistor to
