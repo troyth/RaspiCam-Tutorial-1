@@ -117,8 +117,7 @@ var five = require("johnny-five-plus-raspicam"),
 * So, the below code waits for the board to be ready (param1), then executes the anonymous function (param2).
 *
 **/
-  filename = new Date().getTime()+'.jpg';
-  filepath = __dirname + '/public/images/' + filename;
+  filepath = __dirname + '/public/images/';
 
   /**
   *
