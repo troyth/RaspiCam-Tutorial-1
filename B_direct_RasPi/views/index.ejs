@@ -70,6 +70,8 @@
       
       $('#samples').prepend('<img src="/images/'+ dataString + '">');
 
+      socket.emit('confirm', 'got it');
+
     });  
   </script>
   </body>
