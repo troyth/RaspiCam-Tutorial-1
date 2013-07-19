@@ -174,9 +174,6 @@ var five = require("johnny-five-plus-raspicam"),
 
 
 
-  camera.start();
-
-
 /**
 *
 * Here we set up a listener on the web socket for any new web browser clients that will connect. The
