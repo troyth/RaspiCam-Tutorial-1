@@ -10,6 +10,5 @@
     , "ejs": "*"
     , "less-middleware": "*"
     , "socket.io": "*"
-    , "johnny-five-with-raspicam": "*"
   }
 }
