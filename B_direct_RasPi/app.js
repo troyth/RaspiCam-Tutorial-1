@@ -118,7 +118,7 @@ var five = require("johnny-five-plus-raspicam"),
 *
 **/
   filename = new Date().getTime()+'.jpg';
-  filepath = '/home/pi/apps/RaspiCam-Tutorial-1/B_direct_RasPi/public/images/'+filename;
+  filepath = __dirname + '/public/images/' + filename;
 
   /**
   *
@@ -129,7 +129,7 @@ var five = require("johnny-five-plus-raspicam"),
   **/
   
   camera = new five.RaspiCam({
-    freq: 10000,//update the value every this many milliseconds and trigger a "read" event
+    freq: 2000,//update the value every this many milliseconds and trigger a "read" event
     filepath: filepath,
     mode: 'still'
   });
@@ -151,10 +151,7 @@ var five = require("johnny-five-plus-raspicam"),
     console.log('path to picture: '+ imagepath);
 
     if(filepath == imagepath){
-      setTimeout(function(){
-        io.emit('sendIt', filename );
-      }, 10000);
-      
+      io.emit('sendIt', filename );
     }
 
     /**
