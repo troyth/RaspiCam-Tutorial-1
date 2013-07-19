@@ -134,7 +134,7 @@ var five = require("johnny-five-plus-raspicam"),
     mode: 'still'
   });
 
-  camera.start();
+  
 
   /**
   *
@@ -168,6 +168,8 @@ var five = require("johnny-five-plus-raspicam"),
     **/
     
   });
+
+  camera.start();
 
 
 /**
