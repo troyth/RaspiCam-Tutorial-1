@@ -129,6 +129,7 @@ var five = require("johnny-five-plus-raspicam"),
   
   camera = new five.RaspiCam({
     freq: 2000,//update the value every this many milliseconds and trigger a "read" event
+    length: 12000,//length in ms of the timelapse
     filepath: filepath,
     mode: 'still'
   });
