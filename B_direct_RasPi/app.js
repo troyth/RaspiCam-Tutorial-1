@@ -169,11 +169,9 @@ var five = require("johnny-five-plus-raspicam"),
     
   });
 
-  camera.on("test", function(val){
-    console.log('camera tested ok! '+val);
-  });
 
-  camera.test();
+
+  camera.start();
 
 
 /**
